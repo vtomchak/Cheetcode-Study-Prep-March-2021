@@ -1,6 +1,6 @@
 ## Full Course Calendar (Cohort 1)
 
-The structure of this class leaves you a lot of room for exploration, but it also might make it difficult to know where you’re meant to be spending your time each week. The purpose of this calendar is twofold: one, to give you a single canonical listing of everything you need to do in the class, and two, to give you an idea where we expect your time to be spent each week. If you find yourself unsure where to spend your time, check here!
+The purpose of this repo is twofold: one, to give you a single canonical listing of everything you will be learning in the class, and two, to give you a structured approach to review what you have learned. If you find yourself unsure what you should be studying, check here!
 
 
 # Video Course 
