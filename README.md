@@ -1,6 +1,6 @@
 ## Full Course Calendar (Cohort 1)
 
-The purpose of this repo is twofold: one, to give you a single canonical listing of everything you will be learning in the class, and two, to give you a structured approach to review what you have learned. If you find yourself unsure what you should be studying, check here!
+The purpose of this repo is twofold: one, to give you a single canonical listing of everything you will be learning in the class, and two, to give you a structured approach to review what you have learned. If you find yourself unsure about what you should be studying, check here!
 
 
 # Video Course 
