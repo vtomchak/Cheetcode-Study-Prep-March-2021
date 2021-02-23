@@ -192,7 +192,7 @@ We will Cover 14 Paterns to help with pattern matching.
 
 We will use the Clean code handbook to review 50 Problems. 
 
-Clean Code Handbook Problems Tracker. Clone to your private repo, after gain mastery of a topic be sure to add your code so you can review later. 
+For each problem you study, add YOUR own version of the code using markdown. You will use this as a study aid for years to come. 
 
 
 - Two Sum
