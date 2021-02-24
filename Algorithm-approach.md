@@ -14,3 +14,7 @@ Going through this approach proves that you are professional and a systematic pr
 If you find it easier, use the acronym E.S.T.C.V (Examples, Solutions, Test Cases, Code, Verify).
 
 Source: https://interviewcamp.io/courses/101687/lectures/1678184
+
+
+More examples of using this approach for an interview question: 
+https://docs.google.com/spreadsheets/d/14aVAyDsQmz50TxhldNV5lmsyvYOJrAT9gzi7sGfMu9k/edit#gid=0 
