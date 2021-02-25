@@ -29,3 +29,25 @@ console.log(isPalindrome(input))
 input2 = "racecagggr"
 console.log(isPalindrome(input2))
 ```
+
+# Container With Most Water
+
+```Javascript
+var maxArea = function(height) {
+  let pointer1 = 0;
+  let pointer2 = height.length-1;
+  let maxArea = 0;
+
+  while(pointer1 < pointer2) {
+      let currentArea = Math.min(height[pointer1], height[pointer2])*(pointer2-pointer1);
+      maxArea = Math.max(currentArea, maxArea)
+      if (height[pointer1] < height[pointer2]){
+          pointer1++
+      } else {
+          pointer2--
+      }
+  }
+  return maxArea
+};
+
+```
