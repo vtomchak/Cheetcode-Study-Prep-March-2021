@@ -51,3 +51,51 @@ var maxArea = function(height) {
 };
 
 ```
+
+# Trapping Rain Water
+
+```Javascript
+const trap = function(height) {
+  let l = 0;
+  let r = height.length - 1;
+  let lowPoint = 0;
+  let result = 0;
+  while (l < r) {
+    const lval = height[l];
+    const rval = height[r];
+    if (lval > lowPoint && rval > lowPoint) {
+      lowPoint = Math.min(lval, rval);
+    }
+    if (lval <= lowPoint) {
+      result += lowPoint - lval;
+      l += 1;
+      continue;
+    }
+    if (rval <= lowPoint) {
+      result += lowPoint - rval;
+      r -= 1;
+    }
+  }
+  return result;
+};
+
+```
+
+# Backspace String Compare
+
+```Javascript
+
+function editProcess (string) {
+    const result = [];
+    for (char of string.split('')) {
+        //.pop removes last element of the array
+        char === '#' ? result.pop() : result.push(char)
+    }
+    return result.join('')
+}
+
+function backspaceCompare(S,T) {
+    return editProcess(S) == editProcess(T)
+}
+
+```
