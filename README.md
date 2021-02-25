@@ -2,6 +2,10 @@
 
 The purpose of this repo is twofold: one, to give you a single canonical listing of everything you will be learning in the class, and two, to give you a structured approach to review what you have learned. If you find yourself unsure about what you should be studying, check here!
 
+Material: 
+1. https://www.udemy.com/course/master-the-coding-interview-big-tech-faang-interviews 
+2. https://www.educative.io/courses/grokking-the-coding-interview
+3. https://www.amazon.com/System-Design-Interview-insiders-Second/dp/B08CMF2CQF
 
 # Video Course 
 
