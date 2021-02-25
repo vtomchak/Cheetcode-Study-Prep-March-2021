@@ -7,6 +7,10 @@ Material:
 2. https://www.educative.io/courses/grokking-the-coding-interview
 3. https://www.amazon.com/System-Design-Interview-insiders-Second/dp/B08CMF2CQF
 
+Optional:
+1. https://backtobackswe.com
+2. Leetcode Premium 
+
 # Video Course 
 
 https://www.udemy.com/course/master-the-coding-interview-big-tech-faang-interviews 
