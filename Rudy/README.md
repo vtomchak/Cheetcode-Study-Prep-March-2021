@@ -99,3 +99,42 @@ function backspaceCompare(S,T) {
 }
 
 ```
+
+#Backspace String Compare 2-Pointer
+
+```Javascript
+var backspaceCompare = function(S, T) {
+    let s=S.length-1;
+    let t=T.length-1;
+
+    const handleSkip = (U, u) => {
+        let count = 0;
+        while (U[u]==='#'){
+            do {
+                if (U[u]==='#'){
+                    count++;
+                }else{
+                    count--;
+                }
+                u--;
+            }while (count > 0)
+        }
+        return u;
+    }
+
+    while (s>=0&&t>=0){
+        s = handleSkip(S,s);
+        t = handleSkip(T,t);
+        if (S[s]!==T[t]) return false;
+        s--;
+        t--;
+    }
+    // one end and another hasn't
+    if (s>=0){
+        s = handleSkip(S,s);
+    }
+    if (t>=0){
+        t = handleSkip(T,t);
+    }
+    return s<0 && t <0;
+```
