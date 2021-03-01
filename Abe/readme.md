@@ -1,7 +1,7 @@
 ## Question #1 Google Interview Question Two Sum (Easy) 
 
 ```python
-    from collections import defaultdict
+from collections import defaultdict
 class Solution(object):
     def twoSum(self, nums, target):
         
