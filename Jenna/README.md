@@ -1,4 +1,4 @@
-## Question #1 Google Interview Question Two Sum (Easy)
+## Arrays: Question #1 Google Interview Question Two Sum (Easy)
 ```Javascript
 var twoSum = function(nums, target) {
     let map = {}
@@ -12,7 +12,7 @@ var twoSum = function(nums, target) {
 };
 ```
 
-## Question #2 Container With Most Water (Medium)
+## Arrays: Question #2 Container With Most Water (Medium)
 ```Javascript
 var maxArea = function(height) {
     let pointer1 = 0
@@ -31,7 +31,7 @@ var maxArea = function(height) {
     return max
 };
 ```
-## Question #3 Trapping Rainwater (Hard)
+## Arrays: Question #3 Trapping Rainwater (Hard)
 ```Javascript
 var trap = function(height) {
     let water = 0
@@ -54,7 +54,7 @@ var trap = function(height) {
     return water
 };
 ```
-## Question #4 Backspace String Compare (Easy)
+## String: Question #4 Backspace String Compare (Easy)
 ```Javascript
 var backspaceCompare = function(S, T) {
     let s_result = ''
@@ -88,7 +88,7 @@ var backspaceCompare = function(S, T) {
     return s_result == t_result
 };
 ```
-## Question #5 Longest Substring Without Repeating Characters (Medium)
+## String: Question #5 Longest Substring Without Repeating Characters (Medium)
 ```Javascript
 var lengthOfLongestSubstring = function(s) {
     if(s.length < 1){
@@ -109,4 +109,40 @@ var lengthOfLongestSubstring = function(s) {
      longest = Math.max(longest, i - start)
     return longest
 };
+```
+## String: Question #6a Valid Palindrome(Easy)
+```Javascript
+var isPalindrome = function(s) {
+    let a = [],
+    b = s.toLowerCase().split("");
+  for (let i = 0; i < b.length; i++) {
+    let charCode = b[i].charCodeAt();
+    if (
+    charCode >= 48 && charCode <= 57 ||
+     charCode>= 97 && charCode <= 122
+    ) {
+      a.push(b[i]);
+    }
+  }
+  return [...a].reverse().join("") === a.join("")
+};
+```
+## String: Question #6b Almost Palindrome (Easy)
+```Javascript
+var validPalindrome = function(s) {
+    let pointer1 = 0
+    let pointer2 = s.length - 1
+    while(pointer1 < pointer2){
+        if(s[pointer1] == s[pointer2]){
+            pointer1++
+            pointer2--
+        } else {
+            return isPalin(s.substring(pointer1 + 1, pointer2 + 1)) || isPalin(s.substring(pointer1, pointer2))
+        }
+    }
+    return true
+};
+var isPalin = function(s){
+    return s.split('').reverse().join('') == s
+}
 ```
