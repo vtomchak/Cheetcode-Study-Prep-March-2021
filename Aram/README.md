@@ -108,12 +108,12 @@ function substringCheck(s) {
     for (let i = 0; i < s.length; i++) {
         const letter = s[i]
         if (letter in memo) {
-            start = Math.max(start, seen[letter] + 1)
+            start = Math.max(start, memo[letter] + 1)
         }
         if (longest[1] - longest[0] < i + 1 - start) {
             longest = [start, i + 1]
         }
-        seen[letter] = i
+        memo[letter] = i
     } return s.slice(longest[0], longest[1])
 }
 
