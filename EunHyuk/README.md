@@ -68,3 +68,57 @@ var getMaxWaterContainer = function (heights) {
 ```
 
 ## Question #3 Trapping Rain Water (Hard)
+
+
+
+## Question #4 Backspace String Compare (Easy)
+
+```javascript
+const buildString = function (string) {
+  const builtStringArray = [];
+  for (let i = 0; i < string.length; i++) {
+    if (string[i] !== "#") {
+      builtStringArray.push(string[i]);
+    } else {
+      builtStringArray.pop();
+    }
+  }
+
+  return builtStringArray;
+};
+
+var backspaceCompare = function (S, T) {
+  const finalS = buildString(S);
+  const finalT = buildString(T);
+
+  if (finalS.length !== finalT.length) {
+    return false;
+  } else {
+    for (let p = 0; p < finalS.length; p++) {
+      if (finalS[p] !== finalT[p]) {
+        return false;
+      }
+    }
+  }
+
+  return true;
+};
+```
+
+## Question #5 Longest Substring Without Repeating Characters(Medium)
+
+```javascript
+
+```
+
+## Question #6a Valid Palindrome (Easy)
+
+```javascript
+
+```
+
+## Question #6b Almost Palindrome (Easy)
+
+```javascript
+
+```
