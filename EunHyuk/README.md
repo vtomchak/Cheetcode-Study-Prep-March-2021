@@ -70,7 +70,33 @@ var getMaxWaterContainer = function (heights) {
 ## Question #3 Trapping Rain Water (Hard)
 
 ```javascript
+var trapRain = function (heights) {
+  let totalWater = 0;
 
+  for (let i = 0; i < heights.length; i++) {
+    let left = i,
+      right = i,
+      maxLeft = 0,
+      maxRight = 0;
+
+    while (left >= 0) {
+      maxLeft = Math.max(maxLeft, heights[left]);
+      left--;
+    }
+
+    while (right < heights.length) {
+      maxRight = Math.max(maxRight, heights[right]);
+      right++;
+    }
+
+    const currentWater = Math.min(maxLeft, maxRight) - heights[i];
+
+    if (currentWater >= 0) {
+      totalWater += currentWater;
+    }
+  }
+  return totalWater;
+};
 ```
 
 ## Question #4 Backspace String Compare (Easy)
