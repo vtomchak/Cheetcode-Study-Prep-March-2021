@@ -16,9 +16,9 @@ const twoSum = (nums, target) => {
 	}
 	return result;
 }
-
+```
 // Optimized Solution
-
+```Javascript
 const twoSum = (nums, target) =>  {
   let map = {}
 
@@ -33,9 +33,9 @@ const twoSum = (nums, target) =>  {
        return [i, map[difference]]
      }
    }
-
+```
 ## Question #2 Container With Most Water (Medium)
-
+```Javascript
 const maxArea = (array)=> {
   let pointer1 = 0
   let pointer2 = array.length -1
@@ -54,9 +54,9 @@ const maxArea = (array)=> {
   }
 return maxArea
 };
-
+```
 ## Question #3 Trapping Rain Water (Hard)
-
+```Javascript
 const trapRain = (array) => {
  if (height === null || height.length < 3) return 0
 
@@ -81,10 +81,10 @@ const trapRain = (array) => {
   return waterSum
 
 }
-
+```
 STRINGS
 ## Question #4 Backspace String Compare (Easy)
-
+```Javascript
 const backSpace = (string1, string2) => {
   const trim = (string) => {
     let stack = []
@@ -100,9 +100,9 @@ const backSpace = (string1, string2) => {
   }
   return trim(string1) === trim(string2)
 }
-
+```
 ## Question #5 Longest Substring Without Repeating Characters (Medium)
-
+```Javascript
 const longestSubstring = (string) => {
   let left = 0
   let right = 0
@@ -121,17 +121,19 @@ const longestSubstring = (string) => {
   }
     return maxLength
 }
-
+```
 ## Question #6a Valid Palindrome(Easy)
 
 Naive
+```Javascript
 const isPalindrome = (string) => {
   string= string.replace(/[^a-zA-Z0-9]/g,"").toLowerCase();
   let array = s.split('').reverse().join('')
 
   return s === array
 }
-
+```
+```Javascript
 cons isPalindrome = (string) => {
   string= string.replace(/[^a-zA-Z0-9]/g,"").toLowerCase()
   let newString = ""
@@ -142,8 +144,9 @@ cons isPalindrome = (string) => {
 
   return s === newString
 }
-
+```
 Optimized
+```Javascript
 const isPalindrome =(string) => {
     string= string.replace(/[^a-zA-Z0-9]/g,"").toLowerCase();
     let leftIdx = 0;
@@ -158,9 +161,10 @@ const isPalindrome =(string) => {
     }
     return true
 }
-
+```
 ## Question #6b Almost Palindrome (Easy)
-
+```Javascript
 const almostPalindrome = (string) => {
 
 }
+```
