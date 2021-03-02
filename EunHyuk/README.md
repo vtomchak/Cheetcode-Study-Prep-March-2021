@@ -70,31 +70,32 @@ var getMaxWaterContainer = function (heights) {
 ## Question #3 Trapping Rain Water (Hard)
 
 ```javascript
-var trapRain = function (heights) {
-  let totalWater = 0;
+const getTrappedRainwater = function (heights) {
+  let left = 0,
+    right = heights.length - 1,
+    totalWater = 0,
+    maxLeft = 0,
+    maxRight = 0;
 
-  for (let i = 0; i < heights.length; i++) {
-    let left = i,
-      right = i,
-      maxLeft = 0,
-      maxRight = 0;
+  while (left < right) {
+    if (heights[left] <= heights[right]) {
+      if (heights[left] >= maxLeft) {
+        maxLeft = heights[left];
+      } else {
+        totalWater += maxLeft - heights[left];
+      }
+      left++;
+    } else {
+      if (heights[right] >= maxRight) {
+        maxRight = heights[right];
+      } else {
+        totalWater += maxRight - heights[right];
+      }
 
-    while (left >= 0) {
-      maxLeft = Math.max(maxLeft, heights[left]);
-      left--;
-    }
-
-    while (right < heights.length) {
-      maxRight = Math.max(maxRight, heights[right]);
-      right++;
-    }
-
-    const currentWater = Math.min(maxLeft, maxRight) - heights[i];
-
-    if (currentWater >= 0) {
-      totalWater += currentWater;
+      right--;
     }
   }
+
   return totalWater;
 };
 ```
