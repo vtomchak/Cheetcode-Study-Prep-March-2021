@@ -166,3 +166,14 @@ def is_palindrome(s: str) -> bool:
 
     return True
 ```
+
+
+
+# Question #7 M, N Reversals (Medium)
+# Question #8 Merge Multi-Level Doubly Linked List (Medium)
+# Question #9 Cycle Detection (Medium)
+# Question #10 Valid Parentheses (Easy)
+# Question #11 Minimum Brackets To Remove To Make Valid (Medium)
+# Question #12 Implement Queue With Stacks (Easy)
+# Question #13 Kth Largest Element (Medium)
+# Question #14 Start And End Of Target (Medium)
