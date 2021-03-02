@@ -1,6 +1,6 @@
-    #1 [Two sum](https://leetcode.com/problems/two-sum/)
-    ****Unsorted array
-
+###  1. [Two sum](https://leetcode.com/problems/two-sum/)
+    Unsorted array
+```
         dict_nums = {}
         i = 0
         for n in nums:
@@ -10,9 +10,11 @@
                 return i, dict_nums[target-n]
             i = i+1
         return None
+```
 
-    ****Sorted Array
+    Sorted Array
 
+```
         i = 0
         j = len(nums) - 1
 
@@ -27,10 +29,11 @@
 
 
         return None
+```
+---
+###    2. [Container with most water](https://leetcode.com/problems/container-with-most-water/) 
 
-
-    #2 [Container with most water](https://leetcode.com/problems/container-with-most-water/) 
-
+```
     def maxArea(self, height):
         """
         :type height: List[int]
@@ -53,17 +56,20 @@
                 maxA = area
 
         return maxA
-
-    #3 ********** Trapping Water *********
+        
+```
+---
+###    3. [Trapping Water](https://leetcode.com/problems/trapping-rain-water/)
 
 
     
 
     **************************************
 
+---
+###    4. [Backspace string compare](https://leetcode.com/problems/backspace-string-compare/)
 
-    #4 [Backspace string compare](https://leetcode.com/problems/backspace-string-compare/)
-
+```
     class OpStack(object):
         def __init__(self):
             self.arr = []
@@ -126,9 +132,12 @@
 
 
         return op
+```
+---
 
-    #5 [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
+###    5. [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
 
+```
     if s is None or not s:
             return 0
 
@@ -149,12 +158,13 @@
         print(longest_string)
 
     return len(longest_string)
+```
 
+---
 
+###    6a. [Valid Palindrome (with special characters)](https://leetcode.com/problems/valid-palindrome)
 
-
-    #6a [Valid Palindrome](https://leetcode.com/problems/valid-palindrome)
-
+```
     lower_s = s.lower()
 
     l = len(lower_s)
@@ -177,10 +187,11 @@
 
 
     return True
+```
+---
 
-
-    #6b [Valid Palindrome](https://leetcode.com/problems/valid-palindrome-ii/)
-
+###    6b. [Valid Palindrome (with one character deletion)](https://leetcode.com/problems/valid-palindrome-ii/)
+```
     def isPalindrome(self,s):
 
         isValid = 0
@@ -202,4 +213,5 @@
         else:
             return False 
 
-
+```
+---
