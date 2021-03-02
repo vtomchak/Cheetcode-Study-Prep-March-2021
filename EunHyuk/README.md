@@ -69,8 +69,6 @@ var getMaxWaterContainer = function (heights) {
 
 ## Question #3 Trapping Rain Water (Hard)
 
-
-
 ## Question #4 Backspace String Compare (Easy)
 
 ```javascript
@@ -114,7 +112,21 @@ var backspaceCompare = function (S, T) {
 ## Question #6a Valid Palindrome (Easy)
 
 ```javascript
+var isValidPalindrome = function (s) {
+  let s = s.replace(/[^A-Za-z0-9]/g, " ").toLowerCase();
 
+  let left = 0;
+  let right = s.length - 1;
+
+  while (left < right) {
+    if (s[left] !== s[right]) {
+      return false;
+    }
+    left++;
+    right--;
+  }
+  return true;
+};
 ```
 
 ## Question #6b Almost Palindrome (Easy)
