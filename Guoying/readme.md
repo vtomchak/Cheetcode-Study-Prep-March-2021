@@ -24,7 +24,21 @@ function maxArea(height) {
 
 ### [Question #3 Trapping Rainwater (Hard)](https://leetcode.com/problems/trapping-rain-water/)
 ``` javascript
-
+function trap(height) {
+  let l = 0, r = height.length - 1, res = 0, lMax = 0, rMax = 0
+  while (l < r) {
+    if (height[l] < height[r]) {
+      lMax = Math.max(lMax,height[l])
+      res += lMax - height[l]
+      l++
+    } else {
+      rMax = Math.max(rMax,height[r])
+      res += rMax - height[r]
+      r--
+    }
+  }
+  return res
+}
 ```
 
 ### [Question #4 Backspace String Compare (Easy)](https://leetcode.com/problems/backspace-string-compare/)
