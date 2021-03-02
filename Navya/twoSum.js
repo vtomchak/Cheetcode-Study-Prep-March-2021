@@ -9,3 +9,5 @@ var twoSum = function (nums, target) {
     }
   }
 };
+
+//O(n) time complexity
