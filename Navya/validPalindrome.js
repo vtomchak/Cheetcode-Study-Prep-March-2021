@@ -1,9 +1,9 @@
 var isPalindrome = function (s) {
-  let lowerCaseStr = s.toLowerCase();
+  s = s.replace(/[^A-Za-z0-9]/g, "").toLowerCase();
   let left = 0;
-  let right = lowerCaseStr.length - 1;
+  let right = s.length - 1;
   while (left < right) {
-    if (lowerCaseStr[left] !== lowerCaseStr[right]) {
+    if (s[left] !== s[right]) {
       return false;
     } else {
       left++;
@@ -13,4 +13,5 @@ var isPalindrome = function (s) {
   return true;
 };
 
-//Todo: go over regex and how to remove spaces from a string
+//Time: O(n)
+//Space: O(1)
