@@ -1,22 +1,25 @@
 # Problem 1 - Two Sum (optimized with hash map)
 
-var twoSum = function(nums, target) {
-let result = [];
-let map = {};
-for (let i = 0; i < nums.length; i++) {
-let currentNum = nums[i];
-let difference = target - currentNum;
-if (difference in map) {
-result.push(i, map[difference])
-} else {
-map[currentNum] = i;
-}
-}
-return result;
+```js
+var twoSum = function (nums, target) {
+  let result = [];
+  let map = {};
+  for (let i = 0; i < nums.length; i++) {
+    let currentNum = nums[i];
+    let difference = target - currentNum;
+    if (difference in map) {
+      result.push(i, map[difference]);
+    } else {
+      map[currentNum] = i;
+    }
+  }
+  return result;
 };
+```
 
 # Problem 2 - Container With Most Water
 
+```js
 var maxArea = function(height) {
 let maxArea = 0;
 let left = 0;
@@ -34,6 +37,7 @@ right--;
 }
 return maxArea
 };
+```
 
 # Problem 3 - Trap rain water
 
