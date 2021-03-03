@@ -47,7 +47,23 @@ var maxArea = function (height) {
 ## Question #3 Trapping Rainwater (Hard)
 
 ```Javascript
-//Todo:
+var trap = function (height) {
+  const rightMaxes = [];
+  let rightMax = 0;
+  for (let i = height.length - 1; i >= 0; i--) {
+    rightMax = Math.max(rightMax, height[i]);
+    rightMaxes[i] = rightMax;
+  }
+
+  let waterCollected = 0;
+  let leftMax = 0;
+  for (let i = 0; i < height.length; i++) {
+    leftMax = Math.max(leftMax, height[i]);
+    const rightMax = rightMaxes[i];
+    waterCollected += Math.min(leftMax, rightMax) - height[i];
+  }
+  return waterCollected;
+};
 ```
 
 ## Question #4 Backspace String Compare (Easy)
@@ -82,18 +98,35 @@ var backspaceCompare = function (S, T) {
 ## Question #5 Longest Substring Without Repeating Characters (Medium)
 
 ```Javascript
+var lengthOfLongestSubstring = function (s) {
+  let pointer = 0;
+  let maxLength = 0;
+  let memo = {};
+  for (let i = 0; i < s.length; i++) {
+    const current = s[i];
+    const prev = memo[current];
+    if (prev >= pointer) {
+      pointer = prev + 1;
+    }
+    memo[current] = i;
+    maxLength = Math.max(maxLength, i - pointer + 1);
+  }
+  return maxLength;
+};
 
+//Time: O(n)
+//Space: O(n)
 ```
 
 ## Question #6a Valid Palindrome(Easy)
 
 ```Javascript
 var isPalindrome = function (s) {
-  let lowerCaseStr = s.toLowerCase();
+  s = s.replace(/[^A-Za-z0-9]/g, "").toLowerCase();
   let left = 0;
-  let right = lowerCaseStr.length - 1;
+  let right = s.length - 1;
   while (left < right) {
-    if (lowerCaseStr[left] !== lowerCaseStr[right]) {
+    if (s[left] !== s[right]) {
       return false;
     } else {
       left++;
@@ -103,5 +136,40 @@ var isPalindrome = function (s) {
   return true;
 };
 
-//Todo: go over regex and how to remove spaces from a string
+//Time: O(n)
+//Space: O(1)
+```
+
+## Question #6b Almost Palindrome(Easy)
+
+```Javascript
+var validPalindrome = function (s) {
+  let left = 0;
+  let right = s.length - 1;
+  while (left < right) {
+    if (s[left] != s[right]) {
+      return (
+        isValidPalindrome(s, left + 1, right) ||
+        isValidPalindrome(s, left, right - 1)
+      );
+    }
+    left++;
+    right--;
+  }
+  return true;
+};
+
+var isValidPalindrome = function (str, left, right) {
+  while (left < right) {
+    if (str[left] != str[right]) {
+      return false;
+    }
+    left++;
+    right--;
+  }
+  return true;
+};
+
+//Time: O(n)
+//Space: O(1)
 ```
