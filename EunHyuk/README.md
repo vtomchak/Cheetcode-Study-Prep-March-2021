@@ -261,3 +261,54 @@ var reverseBetween = function(head, left, right) {
    }
 }
 ```
+
+## Question #8 Merge Multi-Level Doubly Linked List (Medium)
+
+```Javascript
+
+```
+
+## Question #9 Cycle Detection (Medium)
+
+```Javascript
+
+```
+
+## Question #10 Valid Parentheses (Easy)
+
+```Javascript
+var isValid = function(s) {
+    const parenthesis = {
+        "(":")",
+        "[":"]",
+        "{":"}",
+    }
+
+    if(s.length === 0) return true;
+
+    const stack = []
+
+    for(let i = 0; i < s.length; i++) {
+        if(parenthesis[s[i]]) {
+            stack.push(s[i])
+        } else {
+        const leftBracket = stack.pop()
+        const correctBracket = parenthesis[leftBracket]
+        if(s[i] !== correctBracket) return false
+        }
+    }
+    return stack.length === 0;
+};
+```
+
+## Question #11 Minimum Brackets To Remove To Make Valid (Medium)
+
+```Javascript
+
+```
+
+## Question #12 Implement Queue With Stacks (Easy)
+
+```Javascript
+
+```
