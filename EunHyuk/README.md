@@ -137,26 +137,27 @@ var backspaceCompare = function (S, T) {
 ## Question #5 Longest Substring Without Repeating Characters(Medium)
 
 ```javascript
-const lengthOfLongestSubstring = function(s) {
-    if(s.length <= 1) return s.length;
+const lengthOfLongestSubstring = function (s) {
+  if (s.length <= 1) return s.length;
 
-    const seen = {};
-    let left = 0, longest = 0;
+  const seen = {};
+  let left = 0,
+    longest = 0;
 
-    for(let right = 0; right < s.length; right++) {
-        const currentChar = s[right];
-        const previouslySeenChar = seen[currentChar];
+  for (let right = 0; right < s.length; right++) {
+    const currentChar = s[right];
+    const previouslySeenChar = seen[currentChar];
 
-        if(previouslySeenChar >= left) {
-          left = previouslySeenChar + 1;
-        }
-
-        seen[currentChar] = right;
-
-        longest = Math.max(longest, right - left + 1);
+    if (previouslySeenChar >= left) {
+      left = previouslySeenChar + 1;
     }
 
-    return longest;
+    seen[currentChar] = right;
+
+    longest = Math.max(longest, right - left + 1);
+  }
+
+  return longest;
 };
 ```
 
@@ -210,4 +211,26 @@ var validSubPalindrome = function (s, start, end) {
   }
   return true;
 };
+```
+
+## Question #7a Reverse Linked List (Easy)
+
+```Javascript
+var reverseList = function (head) {
+   let prevNode = null;
+
+   while(head !== null) {
+      let nextNode = head.next
+      head.next = prevNode
+      prevNode = head
+      head = nextNode
+   }
+
+   return prevNode;
+}
+```
+## Question #7b M, N Reversals (Medium)
+
+```Javascript
+
 ```
