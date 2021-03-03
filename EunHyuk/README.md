@@ -310,5 +310,38 @@ var isValid = function(s) {
 ## Question #12 Implement Queue With Stacks (Easy)
 
 ```Javascript
+class QueueWithStacks {
+   constructor() {
+      this.in=[]; //enqueue
+      this.out=[]; //dequeue
+   }
 
+   enqueue(val) {
+      this.in.push(val); //O(1)
+   }
+
+   dequeue() {
+      if(this.out.length === 0) {
+         while(this.in.length) {
+            this.out.push(this.in.pop())
+         }
+      }
+      return this.out.pop() //O(N)
+   }
+
+   peek() {
+      if(this.out.length === 0) {
+         while(this.in.length) {
+            this.out.push(this.in.pop())
+         }
+      }
+      return this.out[this.length - 1] //O(N)
+   }
+
+   empty() {
+      return this.in.length === 0 && this.out.length === 0 //O(1)
+   }
+}
+
+//Space Complexity = N
 ```
