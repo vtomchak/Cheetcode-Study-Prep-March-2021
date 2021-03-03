@@ -1,9 +1,3 @@
-# Problem 1 - Two Sum (optimized with hash map)
-
-Time: O(n);
-Space: O(n);
-
-```js
 var twoSum = function (nums, target) {
   let result = [];
   let map = {};
@@ -18,38 +12,7 @@ var twoSum = function (nums, target) {
   }
   return result;
 };
-```
 
-# Problem 1 - Two Sum (for a sorted array)
-
-Time: O(n);
-Space: O(1);
-
-```js
-var twoSum = function (sortedNums, target) {
-  let result = [];
-  let left = 0;
-  let right = sortedNums.length - 1;
-  let sum = sortedNums[left] + sortedNums[right];
-  while (left < right) {
-    if (sum > target) {
-      right--;
-    } else if (sum < target) {
-      left++;
-    } else {
-      result.push(left, right);
-    }
-  }
-  return result;
-};
-```
-
-# Problem 2 - Container With Most Water
-
-Time: O(n);
-Space: O(1);
-
-```js
 var maxArea = function (height) {
   let maxArea = 0;
   let left = 0;
@@ -67,14 +30,7 @@ var maxArea = function (height) {
   }
   return maxArea;
 };
-```
 
-# Problem 3 - Trap rain water
-
-Time: O(n);
-Space: O(1);
-
-```js
 var trap = function (height) {
   let totalWater = 0;
   let maxLeft = 0;
@@ -100,14 +56,7 @@ var trap = function (height) {
   }
   return totalWater;
 };
-```
 
-# Problem 4 - Backspace string compare
-
-Time: O(n + m);
-Space: O(1);
-
-```js
 var backspaceCompare = function (S, T) {
   let sPointer = S.length - 1;
   let tPointer = T.length - 1;
@@ -143,14 +92,7 @@ var backspaceCompare = function (S, T) {
   }
   return true;
 };
-```
 
-# Problem 5 - Longest substring without repeating characters
-
-Time: O(n);
-Space: O(1);
-
-```js
 var lengthOfLongestSubstring = function (s) {
   if (s.length <= 1) {
     return s.length;
@@ -175,14 +117,7 @@ var lengthOfLongestSubstring = function (s) {
   }
   return longest;
 };
-```
 
-# Problem 6 - Almost Palindrome
-
-Time: O(n);
-Space: O(1);
-
-```js
 var validPalindrome = function (s) {
   const isValidSubPalindrome = (s, left, right) => {
     while (left < right) {
@@ -208,4 +143,3 @@ var validPalindrome = function (s) {
   }
   return true;
 };
-```
