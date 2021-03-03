@@ -81,7 +81,25 @@ const trap = (height) => {
 ## Question #4 Backspace String Compare (Easy)
 
 ```Javascript
+const typeStr = (str) => {
+  let arr = [];
 
+  for (let i = 0; i < str.length; i++) {
+    let letter = str[i];
+
+    if (letter === '#') {
+      arr.pop();
+    } else {
+      arr.push(letter);
+    }
+  }
+
+  return arr.join('');
+};
+
+const backspaceCompare = (str1, str2) => {
+  return typeStr(str1) === typeStr(str2);
+};
 ```
 
 ## Question #5 Longest Substring Without Repeating Characters (Medium)
@@ -106,5 +124,50 @@ const lengthOfLongestSubstring = (str) => {
 ## Question #6a Valid Palindrome(Easy)
 
 ```Javascript
+const isPalindrome = (str) => {
+  str = str.replace(/[^A-Za-z0-9]/g, '').toLowerCase();
+  let front = 0;
+  let back = str.length - 1;
 
+  while (front < back) {
+    if (str[front] === str[back]) {
+      front++;
+      back--;
+    } else {
+      return false;
+    }
+  }
+  return true;
+};
+```
+
+## Question #6b Almost Palindrome(Hard)
+
+```Javascript
+const isPalindrome = (str, front, back) => {
+  while (front < back) {
+    if (str[front] !== str[back]) {
+      return false;
+    }
+    front++;
+    back--;
+  }
+  return true;
+};
+
+const isPalindromeII = (str) => {
+  let front = 0;
+  let back = str.length - 1;
+
+  while (front < back) {
+    if (str[front] !== str[back]) {
+      return (
+        isPalindrome(str, front + 1, back) || isPalindrome(str, front, back - 1)
+      );
+    }
+    front++;
+    back--;
+  }
+  return true;
+};
 ```
