@@ -2,10 +2,13 @@
 ## Table of contents
 [Two Pointers](#Two-Pointers)
 1. [Pair with Target Sum (easy)](#Pair-with-Target-Sum-(easy))
+2. [Triplet Sum Closest to Target](#Triplet-Sum-Closest-to-Target)
 2. [Problem 3: Minimum Window Sort (medium)](#Minimum-Window-Sort-(medium))
 
 [Fast and Slow Pointers](#Fast-and-Slow-Pointers))
 1. [Find Cycle Start](#Find-Cycle-Start)
+2. [Find Middle of Linked List](#Find-Middle-of-a-Linked-List)
+
 
 [Reverse Linked List](#Reverse-Linked-List)
 
@@ -45,6 +48,37 @@ function pair_with_target_sum(arr, targetSum) {
     }
   }
   return [-1, -1];
+}
+```
+## Triplet Sum Closest to Target
+```javascript
+function triplet_sum_close_to_target(arr, targetSum) {
+  arr.sort((a, b) => a - b);
+  let smallest_difference = Infinity;
+  for (let i = 0; i < arr.length - 2; i++) {
+    let left = i + 1,
+      right = arr.length - 1;
+    while (left < right) {
+      const target_diff = targetSum - arr[i] - arr[left] - arr[right];
+      if (target_diff === 0) { // we've found a triplet with an exact sum
+        return targetSum - target_diff; // return sum of all the numbers
+      }
+
+      // the second part of the following 'if' is to handle the smallest sum when we have more than one solution
+      if (Math.abs(target_diff) < Math.abs(smallest_difference) ||
+        (Math.abs(target_diff) === Math.abs(smallest_difference) && target_diff > smallest_difference)) {
+        smallest_difference = target_diff; // save the closest and the biggest difference
+      }
+
+
+      if (target_diff > 0) {
+        left += 1; // we need a triplet with a bigger sum
+      } else {
+        right -= 1; // we need a triplet with a smaller sum
+      }
+    }
+  }
+  return targetSum - smallest_difference;
 }
 ```
 ## Minimum Window Sort (medium)
@@ -136,6 +170,19 @@ function find_start(head, cycle_length) {
   }
 
   return pointer1;
+}
+```
+## Find Middle of a Linked List
+```javascript
+
+function find_middle_of_linked_list(head) {
+  let slow = head,
+    fast = head;
+  while ((fast !== null && fast.next !== null)) {
+    slow = slow.next;
+    fast = fast.next.next;
+  }
+  return slow;
 }
 ```
 # Reverse Linked List
