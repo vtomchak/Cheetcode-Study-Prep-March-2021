@@ -261,4 +261,14 @@ function hasPath(root, sum) {
   return hasPath(root.left, sum - root.val) || hasPath(root.right, sum - root.val);
 }
 ```
+<!--
+[2, 4, 5, 6, 1]
+targetSum = 8
+hashmap = {}
+currentNum = arr[i]
+numberToFind= Target - currNUm
+8-2 = 6, is 6 in hasmap? no (store currNum and its index in hashmap) i++
 
+[1, 2, 3, 4, 5, 6, 7 ]
+target = 8
+is 8- arr[i] >= or < to arr[i] -->

@@ -1,7 +1,9 @@
 # Clean Code Handbook
 ## Table of contents
 
+1. [Two Sum](#Two-Sum)
 1. [Two Sum II-- Input Array Sorted](#Two-Sum-II---Input-Array-Sorted)
+2. [Two Sum III – Data structure design](#Two-Sum-III-–-Data-structure-design)
 2. [Longest Substring Without Repeating Characters](#longest-substring-without-repeating-characters)
 3. [Valid Palindrome](#Valid-Palindrome)
 4. [Merge Two Sorted Lists](#Merge-Two-Sorted-Lists)
@@ -9,6 +11,21 @@
 6. [Merge K Sorted Linked Lists](#Merge-K-Sorted-Linked-Lists)
 7. [Copy List with Random Pointer](#Copy-List-with-Random-Pointer)
 
+## Two Sum
+```javascript
+find(arr, target){
+  let hashMap = {}
+  for(let i = 0; i < arr.length; i ++ ){
+    let currNum = arr.val[i]
+    let numToFind = target - currNum
+      hashMap[currNum] = i
+    if(hashMap[numToFind] !== undefined){
+      return true
+    }
+  }
+  return false
+}
+```
 ## Two Sum II-- Input Array Sorted
 ```javascript
 const twoSumTwo = function(arr, target) {
@@ -23,6 +40,37 @@ const twoSumTwo = function(arr, target) {
             p1++;
     }
 };
+```
+## Two Sum III – Data structure design
+```javascript
+class TwoSum {
+  constructor(val){
+  this.val = []
+  }
+addItem(item){
+  return this.val.push(item)
+}
+
+find(target){
+  let hashMap = {}
+  for(let i = 0; i < this.val.length; i ++ ){
+    let currNum = this.val[i]
+    let numToFind = target - currNum
+      hashMap[currNum] = i
+    if(hashMap[numToFind] !== undefined){
+      return true
+    }
+  }
+  return false
+}
+
+}
+
+// let test = new TwoSum()
+// test.addItem(1)
+// test.addItem(2)
+// test.addItem(2)
+// console.log(test.find(4))
 ```
 ## Longest Substring Without Repeating Characters
 ```javascript
@@ -63,6 +111,24 @@ const isValidPalindrome = function(s) {
     }
     return true;
 };
+
+function validPal(str) {
+  str = str.replace(/[^a-z0-9+]+/gi, '').toLowerCase()
+  let pointer1 = 0
+  let pointer2 = str.length-1
+  while(pointer1 < pointer2){
+    pointer1++
+    pointer2--
+    if(str[pointer1] !== str[pointer2]){
+      return false
+    }
+  }
+  return true
+}
+```
+## Implement strstr()
+```javascript
+
 ```
 ## Merge Two Sorted Lists
 ## Add Two Numbers
